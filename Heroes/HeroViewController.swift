@@ -14,8 +14,19 @@ class HeroViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
+    var hero : Hero!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url = URL(string: self.hero.urls.first!.url)
+        let request = URLRequest(url: url!)
+        self.title = self.hero.name
+        
+        self.webView.allowsBackForwardNavigationGestures = true
+        self.webView.navigationDelegate = self
+        self.webView.load(request)
+        
     }
 
 
@@ -25,14 +36,10 @@ class HeroViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension HeroViewController: WKNavigationDelegate{
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.loading.stopAnimating()
     }
-    */
-
 }

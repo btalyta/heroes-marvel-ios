@@ -50,6 +50,10 @@ class HeroesTableViewController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newController = segue.destination as! HeroViewController
+        newController.hero = self.heroes[self.tableView.indexPathForSelectedRow?.row ?? 0]
+    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,11 +66,17 @@ class HeroesTableViewController: UITableViewController {
         let hero = self.heroes[indexPath.row]
         
         cell.prepareCell(withHero: hero)
-     
-        // Configure the cell...
-     
+        
         return cell
      }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == self.heroes.count-7 && !self.loadingHeroes && self.heroes.count != self.total){
+            self.currentPage+=1
+            self.loadHeroes()
+        }
+    }
+
     
     /*
      // Override to support conditional editing of the table view.
