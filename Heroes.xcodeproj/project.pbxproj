@@ -17,6 +17,7 @@
 		9F49B8502045F12300CF1565 /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49B84E2045F12300CF1565 /* HeroesTableViewController.swift */; };
 		9F49B8532045F2F500CF1565 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49B8512045F2F500CF1565 /* MarvelAPI.swift */; };
 		9F49B8542045F2F500CF1565 /* MarvelClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49B8522045F2F500CF1565 /* MarvelClasses.swift */; };
+		9F49B8562045F78A00CF1565 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49B8552045F78A00CF1565 /* HeroTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9F49B84E2045F12300CF1565 /* HeroesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
 		9F49B8512045F2F500CF1565 /* MarvelAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		9F49B8522045F2F500CF1565 /* MarvelClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelClasses.swift; sourceTree = "<group>"; };
+		9F49B8552045F78A00CF1565 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
 		C791DEF2F4F8DA43EAA8C5C7 /* Pods_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				9F49B8512045F2F500CF1565 /* MarvelAPI.swift */,
 				9F49B8522045F2F500CF1565 /* MarvelClasses.swift */,
 				9F49B84E2045F12300CF1565 /* HeroesTableViewController.swift */,
+				9F49B8552045F78A00CF1565 /* HeroTableViewCell.swift */,
 				9F49B84D2045F12300CF1565 /* HeroViewController.swift */,
 				9F49B83B2045EF8800CF1565 /* AppDelegate.swift */,
 				9F49B83D2045EF8800CF1565 /* ViewController.swift */,
@@ -235,6 +238,7 @@
 			files = (
 				9F49B8532045F2F500CF1565 /* MarvelAPI.swift in Sources */,
 				9F49B83E2045EF8800CF1565 /* ViewController.swift in Sources */,
+				9F49B8562045F78A00CF1565 /* HeroTableViewCell.swift in Sources */,
 				9F49B84F2045F12300CF1565 /* HeroViewController.swift in Sources */,
 				9F49B8542045F2F500CF1565 /* MarvelClasses.swift in Sources */,
 				9F49B83C2045EF8800CF1565 /* AppDelegate.swift in Sources */,

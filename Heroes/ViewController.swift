@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.tfName.resignFirstResponder()
+        let newController = segue.destination as! HeroesTableViewController
+        newController.name = self.tfName.text
     }
 
 

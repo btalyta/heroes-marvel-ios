@@ -10,13 +10,17 @@ import UIKit
 
 class HeroesTableViewController: UITableViewController {
 
-    
+    var name: String?
+    var heroes: [Hero] = []
     var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
         return label
     }()
+    var loadingHeroes: Bool = false
+    var currentPage: Int = 0
+    var total: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +34,39 @@ class HeroesTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    func loadHeroes(){        
+    func loadHeroes(){
+        self.loadingHeroes = true
+        MarvelAPI.loadHero(name: self.name, page: self.currentPage) { (info) in
+            if let info = info{
+                self.heroes += info.data.results
+                self.total += info.data.total
+                DispatchQueue.main.async {
+                    self.loadingHeroes = false
+                    self.label.text = "Hero not found!"
+                    self.tableView.reloadData()
+                }
+            }
+        }
         
     }
     
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        self.tableView.backgroundView = self.heroes.count == 0 ? self.label : nil
+        return self.heroes.count
     }
     
-    /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HeroTableViewCell
+        let hero = self.heroes[indexPath.row]
+        
+        cell.prepareCell(withHero: hero)
      
-     // Configure the cell...
+        // Configure the cell...
      
-     return cell
+        return cell
      }
-     */
     
     /*
      // Override to support conditional editing of the table view.
