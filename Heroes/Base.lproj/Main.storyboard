@@ -157,7 +157,6 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="ivThumb" destination="Aki-LY-asC" id="CoI-7D-NCS"/>
                                     <outlet property="lbDescription" destination="L3s-sd-nOJ" id="yba-hi-i0p"/>
                                     <outlet property="lbName" destination="sEf-mg-oq0" id="K4G-Ui-0hz"/>
                                     <outlet property="lvThumbnail" destination="Aki-LY-asC" id="WHm-Uq-L9E"/>
