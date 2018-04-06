@@ -32,7 +32,13 @@ class ViewController: UIViewController {
         let newController = segue.destination as! HeroesTableViewController
         newController.name = self.tfName.text
     }
-
-
+    
+    override var shouldAutorotate: Bool{
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 
